@@ -31,28 +31,24 @@
 }
 
 
-
-
-.container-fluid,.container {
-	padding: 20px 20px;
-}
-
-.row {
-	padding: 5px
+body{
+	width: 100%;
+	padding: 0px 0px 0px 0px;
 }
 
 
-.ASUKASHIKOU__Movie {
-	
+.container-fluid,.container,.row {
+	padding: 0px 0px 0px 0px;
 }
+
 
 
 .loading {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 80;
   background-color: #E7E7E7;
   display: flex;
@@ -107,21 +103,29 @@
 	z-index: 50;
 	width: 100%;
 	background: #f4f4f6;
+	padding: 25px 30px;
 	
 }
 
+/* スマホ用のハンバーガーメニュー */
+.menu-button {
+	background-color: none;
+    color: 00000;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 50%;
+    text-align: right;
+}
 
 
 nav ul {
     list-style: none; /* リストマーカーを消す */
-    padding: 0;
-    margin: 0;
-    display: flex; /* フレックスボックスを使用して横並び */
+    padding: 5;
+    margin: 5;
     gap: 20px; /* 各項目の間にスペースを作成 */
-}
-
-nav ul li {
-    display: inline; /* 必要に応じて追加 */
 }
 
 nav ul li:first-child a {
@@ -134,25 +138,77 @@ nav ul li:first-child a:hover {
 
 nav ul li a {
     text-decoration: none; /* リンクの下線を消す */
-    color: #999; /* リンクの文字色 */
-	transition : all 0.1s ease 0s; /* 対象 時間 変化 遅延 */
-
+    color: #324178; /* リンクの文字色 */
 }
 
 nav ul li a:hover {
     text-decoration: none; /* ホバー時の下線を消す */
-    color: #ECECEC; /*ホバー時は背景と同色 */
+    color: #65719a; /*ホバー時の色 */
 }
 
 nav ul li a:focus {
     outline: none; /* フォーカス時のアウトラインを消す */
 }
 
-nav ul li a span {
+nav ul li a {
     padding: 5px 10px; /* リンクにパディングを追加 */
     display: block; /* クリック可能な範囲を広げる */
 }
 
+nav ul li a span {
+	padding: 5px;
+
+}
+
+
+/* なぜ変わらない
+.nav__change:first-child {
+	color: #65719a;
+} */
+
+
+
+/* 大きな画面（タブレット・デスクトップ）ではメニューを横並びに */
+@media (min-width: 768px) {
+     .menu-button {
+        display: none; /* デスクトップではハンバーガーメニューを非表示 */
+    }
+
+
+   
+nav ul {
+    /* list-style: none; /* リストマーカーを消す */
+    padding: 0;
+    margin: 0;
+    display: flex; /* フレックスボックスを使用して横並び */
+    gap: 10px; /* 各項目の間にスペースを作成 */
+	
+}
+
+nav ul li {
+    display: inline; /* 必要に応じて追加 */
+}
+
+
+
+
+
+nav ul li a {
+    /* text-decoration: none; /* リンクの下線を消す */
+    color: #999; /* リンクの文字色 */
+	transition : all 0.1s ease 0s; /* 対象 時間 変化 遅延 */
+
+}
+
+nav ul li a:hover {
+    /* text-decoration: none; ホバー時の下線を消す */
+    color: #ECECEC; /*ホバー時は背景と同色 */
+}
+
+nav ul li a:focus {
+    /* outline: none; フォーカス時のアウトラインを消す */
+}
+	
 
 
 
@@ -167,7 +223,7 @@ nav ul li a span {
 /* 日本語のテキスト（非表示） */
 .nav__change span:last-child  {
   opacity: 0;
-  width: 80px;
+  width: 90px;
   height: auto;
   z-index: 0;
   text-align: center;
@@ -176,7 +232,6 @@ nav ul li a span {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #324178;
-　opacity:0;
   transition : all 0.3s ease-out 0.1s; /* 対象 時間 変化 遅延 */
 }
 
@@ -187,6 +242,33 @@ nav a:hover .nav__change span:last-child{
   color: #0d3246;
 	
 }
+}
+
+
+
+
+
+
+
+
+
+
+/* ホバー状態時の英語非表示（必要なら） 
+nav a.hover .nav__change span:first-child {
+  opacity: 0;
+}*/
+
+
+
+/* @media (max-width: 768px) {
+   nav ul {
+        flex-wrap: wrap; 
+    }*/
+
+
+
+
+
 
 
 .logo__En{
@@ -196,12 +278,12 @@ nav a:hover .nav__change span:last-child{
 
 
 .main__img{
+	width: 100%;
 	position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    margin: auto;
     display: block;
 }
 
@@ -211,8 +293,8 @@ nav a:hover .nav__change span:last-child{
     bottom: 0;
     left: 0;
     right: 0;
-    margin: auto;
     display: block;
+	width: 100%;
 }
 
 .logo__EnJa{
@@ -252,6 +334,7 @@ nav a:hover .nav__change span:last-child{
 	opacity : 0.1;
 	transform : translate(0, 250px);
 	transition : all 1.5s;
+	width: 100%;
 	}
 
 /* 画面内に入った状態 */
